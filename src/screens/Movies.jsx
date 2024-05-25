@@ -5,6 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import NowShowing from "../components/NowShowing";
 import ComingSoon from "../components/ComingSoon";
 
+
 const Movies = () => {
   const [optionSelected, setOptionSelected] = useState(true);
 

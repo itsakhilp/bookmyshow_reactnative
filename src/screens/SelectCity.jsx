@@ -1,11 +1,11 @@
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Store } from "../components/Context/Wrapper";
 
 const SelectCity = () => {
-
   const nav = useNavigation();
 
   const cities = [
@@ -24,6 +24,10 @@ const SelectCity = () => {
 
   const [selectedCity, setSelectedCity] = useState();
   const [isClicked, setIsClicked] = useState(true);
+  const [cityData, setCityData] = useState();
+
+  const { data, setData } = useContext(Store);
+  console.log(data);
 
   return (
     <SafeAreaView style={{ flex: 1, padding: 20, marginTop: 50 }}>
@@ -48,6 +52,7 @@ const SelectCity = () => {
               onPress={() => {
                 setSelectedCity(index);
                 setIsClicked(false);
+                setData(item);
               }}
               style={{
                 borderColor: selectedCity == index ? "red" : "grey",
@@ -71,10 +76,10 @@ const SelectCity = () => {
       <View style={{ padding: 20, justifyContent: "flex-end", flex: 0.9 }}>
         <TouchableOpacity
           disabled={isClicked}
-          onPress={() =>{ 
-            AsyncStorage.setItem('city','saved')
-            nav.navigate("Movies")}
-        }
+          onPress={() => {
+            AsyncStorage.setItem("city", "saved");
+            nav.navigate("Movies");
+          }}
           style={{
             height: 45,
             marginHorizontal: 50,
