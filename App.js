@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './src/screens/Splash';
 import SelectCity from './src/screens/SelectCity';
+import Movies from './src/screens/Movies';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,9 +12,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='splash' screenOptions={{headerShown:false}}>
+      <Stack.Navigator initialRouteName='Splash' screenOptions={{headerShown:false}}>
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="SelectCity" component={SelectCity} />
+        <Stack.Screen name="Movies" component={Movies} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
