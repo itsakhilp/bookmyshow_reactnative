@@ -8,6 +8,7 @@ import Movies from './src/screens/Movies';
 import ShowDetails from './src/screens/ShowDetails';
 import { Wrapper } from './src/components/Context/Wrapper';
 import Theaters from './src/screens/Theaters';
+import Ticket from './src/screens/Ticket';
 
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Screen name="Movies" component={Movies} />
         <Stack.Screen name='ShowDetails' component={ShowDetails} />
         <Stack.Screen name='Theaters' component={Theaters}/>
+        <Stack.Screen name='Ticket' component={Ticket} />
       </Stack.Navigator>
     </NavigationContainer>
     </Wrapper> 

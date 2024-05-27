@@ -27,7 +27,7 @@ const SelectCity = () => {
   const [cityData, setCityData] = useState();
 
   const { data, setData } = useContext(Store);
-  console.log(data);
+  // console.log(data);
 
   return (
     <SafeAreaView style={{ flex: 1, padding: 20, marginTop: 50 }}>

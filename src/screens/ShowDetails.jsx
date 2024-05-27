@@ -1,4 +1,4 @@
-import { View, FlatList, Text, TouchableOpacity } from "react-native";
+import { View, FlatList, Text, TouchableOpacity, Alert } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Theaters } from "../utils/Data";
@@ -10,7 +10,7 @@ import { dates } from "../utils/Data";
 import { useNavigation } from "@react-navigation/native";
 
 const ShowDetails = ({ route }) => {
-  const { title } = route.params.item;
+  const { title, img } = route.params.item;
   const [dateSelected, setDateSelected] = useState();
   const [date, setDate] = useState();
   const nav = useNavigation();
@@ -101,13 +101,16 @@ const ShowDetails = ({ route }) => {
               {item.timings.map((value, index) => (
                 <TouchableOpacity key={index}
                   onPress={()=> {
+                    date!=null ? 
                     nav.navigate('Theaters',{
                       title,
                       theater : item.name,
                       date,
+                      img,
                       time:value
-                    })
+                    }): Alert.alert('Please select a date to proceed')
                   }}
+                  
                 >
                   <Text
                     style={{
