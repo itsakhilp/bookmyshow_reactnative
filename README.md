@@ -16,7 +16,7 @@ Welcome to the BookMyShow Clone repository! This project is a full-fledged movie
 This project is built using the following technologies:
 
 - **React Native**: For building cross-platform mobile applications.
-- **Tailwind CSS**: To design a sleek and responsive UI.
+- **NativeWind**: To design a sleek and responsive UI.
 - **Expo**: For a streamlined React Native development experience.
 - **JSON**: To handle data exchange and storage.
 - **Context API**: For efficient state management across the app.
