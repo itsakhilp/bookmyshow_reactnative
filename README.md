@@ -1,6 +1,6 @@
 # 🎬 BookMyShow Clone 🎟️
 
-Welcome to the BookMyShow Clone repository! This project is a full-fledged movie ticket booking application, packed with exciting features to provide a seamless and engaging user experience. Whether you're planning a night out at the movies or just exploring what's showing nearby, this app has got you covered!
+Welcome to the BookMyShow Clone repository! This project is a full-fledged movie ticket booking application, packed with exciting features to provide a seamless and engaging user experience. Whether you're planning a night out at the movies or just exploring what's showing nearby, this app has got you covered!!!
 
 ## 🚀 Features
 
