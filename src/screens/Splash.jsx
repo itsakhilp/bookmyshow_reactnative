@@ -15,7 +15,7 @@ const Splash = () => {
       value != null ? nav.replace('Movies') : nav.replace('SelectCity')
     })
       nav.replace("SelectCity")
-   },3000) 
+   },1000) 
   },[])
   return (
     <View  style={{flex:1, backgroundColor:useColors.primary,justifyContent:'center', alignItems: 'center', display: 'flex'}}>

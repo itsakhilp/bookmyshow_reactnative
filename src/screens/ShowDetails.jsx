@@ -11,8 +11,8 @@ import { useNavigation } from "@react-navigation/native";
 
 const ShowDetails = ({ route }) => {
   const { title } = route.params.item;
-  console.log(title);
   const [dateSelected, setDateSelected] = useState();
+  const [date, setDate] = useState();
   const nav = useNavigation();
   return (
     <SafeAreaView className="text-white bg-white ">
@@ -43,7 +43,10 @@ const ShowDetails = ({ route }) => {
           renderItem={({ item, index }) => (
             <TouchableOpacity
               className="justify-evenly px-5 items-center "
-              onPress={() => setDateSelected(index)}
+              onPress={() =>{ 
+                setDateSelected(index)
+                setDate(item)
+              }}
               style={{
                 backgroundColor: dateSelected == index ? "red" : null,
               }}
@@ -97,7 +100,14 @@ const ShowDetails = ({ route }) => {
             <View className="flex flex-row flex-wrap gap-3 p-3">
               {item.timings.map((value, index) => (
                 <TouchableOpacity key={index}
-                  onPress={()=> nav.navigate('Theaters')}
+                  onPress={()=> {
+                    nav.navigate('Theaters',{
+                      title,
+                      theater : item.name,
+                      date,
+                      time:value
+                    })
+                  }}
                 >
                   <Text
                     style={{
